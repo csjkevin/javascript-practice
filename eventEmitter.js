@@ -5,9 +5,9 @@ class EventEmitter {
 
   on(eventName, callback) {
     if (this.subs.hasOwnProperty(eventName)) {
-      this.subs[type] = [];
-    } else {
       this.subs[type].push(callback);
+    } else {
+      this.subs[type] = [callback];
     }
   }
 
