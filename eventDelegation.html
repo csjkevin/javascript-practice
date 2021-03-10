@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="test">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+    </div>
+    <script>
+      let div = document.getElementById("test");
+      div.addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+          console.log(e.target.innerText);
+          let parentNode = e.target.parentNode;
+          let childNodes = parentNode.getElementsByTagName("button");
+          for (let i = 0; i < childNodes.length; i++) {
+            if (e.target === childNodes[i]) {
+              console.log(`element[${i}] was clicked`);
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
